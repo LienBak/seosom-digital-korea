@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Book, User, Settings, Home, Library, Edit, BarChart3 } from 'lucide-react';
@@ -30,7 +29,7 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
               <Book className="h-8 w-8 text-amber-600" />
-              <span className="text-xl font-bold text-gray-900">KT 걷다가서재</span>
+              <span className="text-xl font-bold text-gray-900">Amble Library</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -115,7 +114,7 @@ const Layout = ({ children }: LayoutProps) => {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Book className="h-6 w-6 text-amber-400" />
-                <span className="text-lg font-bold">KT 걷다가서재</span>
+                <span className="text-lg font-bold">Amble Library</span>
               </div>
               <p className="text-gray-400 text-sm">
                 AI 기반 디지털 출판 플랫폼으로 새로운 독서 경험을 제공합니다.
@@ -145,7 +144,7 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2024 KT 걷다가서재. All rights reserved.</p>
+            <p>&copy; 2024 Amble Library. All rights reserved.</p>
           </div>
         </div>
       </footer>
