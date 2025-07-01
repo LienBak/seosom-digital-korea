@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { 
   PenTool, 
@@ -14,7 +13,8 @@ import {
   Clock,
   CheckCircle,
   XCircle,
-  AlertCircle
+  AlertCircle,
+  Key
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -29,6 +29,7 @@ import Layout from '@/components/Layout';
 const Author = () => {
   const [currentContent, setCurrentContent] = useState('');
   const [selectedBook, setSelectedBook] = useState(null);
+  const [apiKey, setApiKey] = useState('');
 
   // Mock author data
   const authorStats = {
@@ -99,9 +100,18 @@ const Author = () => {
     }
   };
 
+  const handleGenerateAICover = () => {
+    if (!apiKey) {
+      alert('AI 커버 생성을 위해서는 API key가 필요합니다.');
+      return;
+    }
+    // API key로 AI 커버 생성 로직 구현 예정
+    console.log('AI 커버 생성 중... API Key:', apiKey);
+  };
+
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50 py-8">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header */}
@@ -119,7 +129,7 @@ const Author = () => {
                     <p className="text-sm text-gray-600">출간 도서</p>
                     <p className="text-2xl font-bold text-gray-900">{authorStats.publishedBooks}</p>
                   </div>
-                  <BookOpen className="h-8 w-8 text-amber-600" />
+                  <BookOpen className="h-8 w-8 text-pink-600" />
                 </div>
               </CardContent>
             </Card>
@@ -213,7 +223,7 @@ const Author = () => {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
                         <div className="flex-1">
                           <p className="text-sm font-medium">AI 커버 생성 완료</p>
                           <p className="text-xs text-gray-600">1일 전</p>
@@ -257,6 +267,37 @@ const Author = () => {
                         className="min-h-[400px] resize-none"
                       />
                     </div>
+
+                    {/* AI Cover Generation Section */}
+                    <div className="border rounded-lg p-4 bg-pink-50">
+                      <div className="flex items-center mb-3">
+                        <Key className="mr-2 h-5 w-5 text-pink-600" />
+                        <h3 className="font-semibold text-pink-800">AI 커버 생성</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div>
+                          <Label htmlFor="api-key">API Key</Label>
+                          <Input
+                            id="api-key"
+                            type="password"
+                            placeholder="AI 커버 생성용 API Key를 입력하세요"
+                            value={apiKey}
+                            onChange={(e) => setApiKey(e.target.value)}
+                          />
+                          <p className="text-xs text-gray-600 mt-1">
+                            API Key는 안전하게 암호화되어 저장됩니다.
+                          </p>
+                        </div>
+                        <Button 
+                          variant="outline" 
+                          onClick={handleGenerateAICover}
+                          className="border-pink-300 text-pink-700 hover:bg-pink-100"
+                        >
+                          <Image className="mr-2 h-4 w-4" />
+                          AI 커버 생성
+                        </Button>
+                      </div>
+                    </div>
                     
                     <div className="flex justify-between items-center">
                       <div className="text-sm text-gray-600">
@@ -267,11 +308,7 @@ const Author = () => {
                           <Save className="mr-2 h-4 w-4" />
                           임시저장
                         </Button>
-                        <Button variant="outline">
-                          <Image className="mr-2 h-4 w-4" />
-                          AI 커버 생성
-                        </Button>
-                        <Button className="bg-amber-600 hover:bg-amber-700">
+                        <Button className="bg-pink-600 hover:bg-pink-700">
                           <Send className="mr-2 h-4 w-4" />
                           출간 신청
                         </Button>
@@ -363,7 +400,7 @@ const Author = () => {
                       <Input id="portfolio" placeholder="포트폴리오 URL을 입력하세요" />
                     </div>
                     
-                    <Button className="bg-amber-600 hover:bg-amber-700">
+                    <Button className="bg-pink-600 hover:bg-pink-700">
                       프로필 업데이트
                     </Button>
                   </div>

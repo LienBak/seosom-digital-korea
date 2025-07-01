@@ -22,7 +22,7 @@ const AuthorCard = ({ name, avatar, bio, booksCount, totalViews, specialty }: Au
         />
         <div className="flex-1">
           <h3 className="font-semibold text-lg mb-1">{name}</h3>
-          <p className="text-amber-600 text-sm mb-2">{specialty}</p>
+          <p className="text-pink-600 text-sm mb-2">{specialty}</p>
           <p className="text-gray-600 text-sm mb-3 line-clamp-2">{bio}</p>
           
           <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
@@ -36,7 +36,7 @@ const AuthorCard = ({ name, avatar, bio, booksCount, totalViews, specialty }: Au
             </div>
           </div>
           
-          <Button size="sm" variant="outline" className="border-amber-200 text-amber-700 hover:bg-amber-50">
+          <Button size="sm" variant="outline" className="border-pink-200 text-pink-700 hover:bg-pink-50">
             작가 보기
           </Button>
         </div>

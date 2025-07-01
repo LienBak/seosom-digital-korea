@@ -106,23 +106,27 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-amber-600 to-orange-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-pink-400 via-rose-500 to-pink-600 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               AI와 함께하는 
-              <span className="block text-yellow-300">새로운 출판 경험</span>
+              <span className="block text-pink-100">새로운 출판 경험</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
               작가의 창작부터 독자의 독서까지, 디지털 기술로 완성되는 프리미엄 서재
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-100 font-semibold">
+              <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 font-semibold">
                 <Sparkles className="mr-2 h-5 w-5" />
                 무료로 시작하기
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-amber-600">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-pink-600">
                 서재 둘러보기
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-pink-600">
+                서비스 둘러보기
               </Button>
             </div>
           </div>
@@ -130,7 +134,7 @@ const Index = () => {
       </section>
 
       {/* KT Customer Special Offer */}
-      <section className="bg-gradient-to-r from-pink-500 to-red-500 text-white py-4">
+      <section className="bg-gradient-to-r from-rose-500 to-pink-500 text-white py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center space-x-2 text-center">
             <Crown className="h-5 w-5" />
@@ -148,8 +152,8 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
-                  <stat.icon className="h-8 w-8 text-amber-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-4">
+                  <stat.icon className="h-8 w-8 text-pink-600" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-2">{stat.value}</div>
                 <div className="text-gray-600">{stat.label}</div>
@@ -160,7 +164,7 @@ const Index = () => {
       </section>
 
       {/* Featured Bestsellers */}
-      <section className="py-16 bg-gradient-to-br from-amber-50 to-orange-50">
+      <section className="py-16 bg-gradient-to-br from-pink-50 to-rose-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">베스트셀러</h2>
@@ -241,7 +245,7 @@ const Index = () => {
                   </div>
                   <div className="flex justify-between items-center">
                     <span>KT 고객 추가</span>
-                    <span className="font-semibold text-amber-600">+5,000P</span>
+                    <span className="font-semibold text-pink-600">+5,000P</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>평균 도서 가격</span>
@@ -249,15 +253,15 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                <Button className="w-full bg-pink-600 hover:bg-pink-700">
                   무료 시작하기
                 </Button>
               </CardContent>
             </Card>
 
             {/* Monthly Subscription */}
-            <Card className="relative border-2 border-amber-500">
-              <Badge className="absolute top-4 right-4 bg-amber-500">인기</Badge>
+            <Card className="relative border-2 border-pink-500">
+              <Badge className="absolute top-4 right-4 bg-pink-500">인기</Badge>
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2">월 정액 구독</h3>
@@ -265,7 +269,7 @@ const Index = () => {
                 </div>
                 
                 <div className="text-center mb-8">
-                  <div className="text-4xl font-bold text-amber-600 mb-2">
+                  <div className="text-4xl font-bold text-pink-600 mb-2">
                     9,900원
                     <span className="text-lg text-gray-600 font-normal">/월</span>
                   </div>
@@ -274,20 +278,20 @@ const Index = () => {
                 
                 <div className="space-y-3 mb-8">
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
                     <span className="text-sm">전체 도서 무제한 열람</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
                     <span className="text-sm">신작 도서 우선 접근</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
                     <span className="text-sm">개인 맞춤 추천</span>
                   </div>
                 </div>
                 
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                <Button className="w-full bg-pink-600 hover:bg-pink-700">
                   구독 시작하기
                 </Button>
               </CardContent>
@@ -297,15 +301,15 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-amber-600 to-orange-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-pink-600 to-rose-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">당신의 이야기를 세상에 전하세요</h2>
           <p className="text-xl mb-8 opacity-90">AI 기술로 더욱 쉬워진 출판, 지금 시작해보세요</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-amber-600 hover:bg-gray-100">
+            <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100">
               작가 지원하기
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-amber-600">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-pink-600">
               서비스 둘러보기
             </Button>
           </div>
